@@ -1,9 +1,13 @@
 import React from "react";
 
-export default function Card() {
-    return (
+export default function Card(post) {
+  console.log(post.post)  
+  const img = new Image();
+  img.crossOrigin = "Anonymous";
+  img.src = post.post.thumbnails[4].src;
+  return (
         <div className="m-4 max-w-sm rounded-md overflow-hidden shadow-lg bg-gray-50">
-        <img className="w-full" src="https://wallpaperaccess.com/full/2786602.jpg" alt="#" />
+        <img className="w-full" src={img.src} alt="#" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl text-gray-900 mb-2">Post Title</div>
           <p className="text-gray-700 text-base">
